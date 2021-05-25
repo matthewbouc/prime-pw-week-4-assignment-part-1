@@ -19,7 +19,7 @@ function helloName( name ) {
 } //end helloName()
 
 // Remember to call the function to test
-console.log('Test - should say "Hello, (name input)!":', helloName('X Æ A-12'));
+console.log('Test - should say "Hello, X Æ A-12!":', helloName('X Æ A-12'));
 
 
 // 3. Function to add two numbers together & return the result
@@ -58,8 +58,20 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
 function getLast( array ) {
+  if (array.length > 0){
+    return array[array.length-1] //end if array exists
+  } else {
+    return 'undefined' // end if array is empty
+  }
+}//end getLast
+//log array outcomes
+testArray = ['cow', 'fish', 'orange', 'taco', 'napkin'];
+testArray1 = ['juice'];
+testArray2 = [ ];
+console.log('Test for multi item array, log napkin: ', getLast(testArray));
+console.log('Test single item array, log juice: ', getLast(testArray1));
+console.log('Test empty array, log undefined: ', getLast(testArray2));
 
-}
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
