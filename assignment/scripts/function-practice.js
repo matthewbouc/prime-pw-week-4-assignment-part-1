@@ -48,9 +48,8 @@ console.log(`5. Function to return true if number is positive, else false.`);
 function isPositive( number ) {
   if ( number > 0 ){
     return true; //end if true
-  } else {
-    return false;
-  }// end if false
+  }
+  return false; // else false
 }//end isPositive()
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
@@ -65,9 +64,8 @@ console.log(`6.  Return last item in an array, unless empty return 'undefined'.`
 function getLast( array ) {
   if (array.length > 0){
     return array[array.length-1] //end if array exists
-  } //else {
-  return 'undefined' // end if array is empty
-  //}
+  }
+  return 'undefined' // else undefined
 }//end getLast
 //log array outcomes
 testArray = ['cow', 'fish', 'orange', 'taco', 'napkin'];
@@ -86,6 +84,7 @@ console.log('Test - for empty array, log undefined: ', getLast(testArray2));
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 console.log(`7. Find a value in array using a loop.  If found return true, else false.`);
 function find( value, array ){
+  // if the value is found during the loop, increase i.  If i = 0, then value not found.
   i = 0;
   for (let x of array){
     if (x === value){
@@ -93,10 +92,9 @@ function find( value, array ){
     } // end (x === value) conditional
   } // end for of loop
   if (i > 0){
-    return true; // if value is found, return true
-  } else {
-    return false; // if value is not found, return false
-  } // end (i > 0) conditional
+    return true;
+  } // if value is found, return true
+  return false; // else false
 }// end of find()
 //Using testArray from question 6, run find() function.
 console.log('Test - log true for orange in testArray: ', find('orange', testArray));
@@ -112,9 +110,8 @@ console.log(`8. Check letter vs first letter in string.  If === return true, els
 function isFirstLetter(letter, string) {
   if (letter === string[0]){
     return true; // letter === string[0] conditional
-  } else {
-    return false;
-  } // return false
+  }
+  return false; // else return false
 }// end of isFirstLetter()
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
