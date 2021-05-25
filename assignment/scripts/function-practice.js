@@ -152,3 +152,33 @@ console.log('Test - log noPos array and an empty array: ', noPos, onlyPositives(
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+
+//  A Narcissistic Number is a positive number which is the
+//  sum of its own digits, each raised to the power of the number
+//  of digits in the number.  Return true if a number is narcissistic
+//  or false if a number is not narcissistic.  Use base 10.
+
+
+function narcissistic( number ){
+  // convert the number to a string
+  let numberString = number.toString();
+  // determine the number of digits (to which each digit will be raised to the power of)
+  let power = numberString.length;
+  let newNumberString = [];  // will contain each digit to its power
+  let sumDigits = 0; // will be used to sum each number in newNumberString
+  // loop through each digit and raise it to the appropriate power, then push it to new array.
+  for (let x of numberString){
+    newNumberString.push(x ** power);
+  } // end for of loop
+  // Loop through newNumberString and sum the digits.
+  for (let y of newNumberString){
+    sumDigits += y;
+  }
+  // determine if the number is narcissistic(true) or not(false)
+  return sumDigits === number;
+} // end narcissistic()
+
+console.log('The number 153 is narcissistic: 1^3 (1) + 5^3 (125) + 3^3 (27) = 153 ', narcissistic( 153 ));
+console.log('Number 1634 is narcissistic 1^4 + 6^4 + 3^4 + 4^4 = 1634, ', narcissistic( 1634 ));
+console.log('Number 1635 is not narcissistic: 1^4 (1) + 6^4 (1,296) + 3^4 (81) + 5^4 (625) = 2003', narcissistic(1635));
