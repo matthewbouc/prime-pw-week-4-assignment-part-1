@@ -103,23 +103,51 @@ console.log('Test - log false for kites in testArray: ', find('kites', testArray
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
-}
+  if (letter === string[0]){
+    return true; // letter === string[0] conditional
+  } else {
+    return false;
+  } // return false
+}// end of isFirstLetter()
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll( numArray ) {
   let sum = 0
   // TODO: loop to add items
+  for (let x of numArray){
+    sum += x;
+  } //end for of loop
   return sum;
-}
+} // end sumAll()
+numbers = [2, 8, 10, 11, 29, 40];
+numbers1 = [-50, -15, 0, 10, 25, 30];
+console.log('numbers test array', numbers);
+console.log('numbers1 test array', numbers1);
+console.log('Test - log 100: ', sumAll(numbers));
+console.log('Test - log 0: ', sumAll(numbers1));
+
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+function onlyPositives( numArray ){
+  let newArray = []
+  //loop through numArray and put positive numbers into newArray
+  for (let x of numArray){
+    if (x > 0){
+      newArray.push(x);
+    }
+  } //end for of loop
+  return newArray; // return newArray with onlly positive numbers
+}
 
-
+let noPos = [-14, -10, -100, -3, 0] // test array
+console.log('noPos test array, ', noPos);
+console.log('Test - log numbers array and new array matching numbers ', numbers, onlyPositives( numbers ));
+console.log('Test - log numbers1 array and new array with 10,25,30', numbers1, onlyPositives( numbers1 ));
+console.log('Test - log noPos array and an empty array: ', noPos, onlyPositives( noPos ));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
