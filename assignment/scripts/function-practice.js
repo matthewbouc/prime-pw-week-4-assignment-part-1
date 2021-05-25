@@ -68,6 +68,9 @@ function getLast( array ) {
 testArray = ['cow', 'fish', 'orange', 'taco', 'napkin'];
 testArray1 = ['juice'];
 testArray2 = [ ];
+console.log('testArray: ', testArray);
+console.log('testArray1: ', testArray1);
+console.log('testArray2: ', testArray2);
 console.log('Test for multi item array, log napkin: ', getLast(testArray));
 console.log('Test single item array, log juice: ', getLast(testArray1));
 console.log('Test empty array, log undefined: ', getLast(testArray2));
@@ -77,8 +80,22 @@ console.log('Test empty array, log undefined: ', getLast(testArray2));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find( value, array ){
+  i = 0;
+  for (let x of array){
+    if (x === value){
+      i++;
+    } // end (x === value) conditional
+  } // end for of loop
+  if (i > 0){
+    return true; // if value is found, return true
+  } else {
+    return false; // if value is not found, return false
+  } // end (i > 0) conditional
+}// end of find()
+//Using testArray from question 6, run find() function.
+console.log('Test - log true for orange in testArray: ', find('orange', testArray));
+console.log('Test - log false for kites in testArray: ', find('kites', testArray));
 
-}
 
 // ----------------------
 // Stretch Goals
