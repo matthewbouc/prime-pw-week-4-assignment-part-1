@@ -88,10 +88,7 @@ function find( value, array ){
       i++;
     } // end (x === value) conditional
   } // end for of loop
-  if (i > 0){
-    return true;
-  } // if value is found, return true
-  return false; // else false
+  return i > 0;
 }// end of find()
 //Using testArray from question 6, run find() function.
 console.log('Test - log true for orange in testArray: ', find('orange', testArray));
