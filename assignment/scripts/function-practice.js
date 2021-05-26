@@ -102,10 +102,11 @@ console.log('Test - log false for kites in testArray: ', find('kites', testArray
 //    string. Return true if it is, and false otherwise
 console.log(`8. Check letter vs first letter in string.  If === return true, else false.`);
 function isFirstLetter(letter, string) {
-  if (letter === string[0]){
-    return true; // letter === string[0] conditional
-  }
-  return false; // else return false
+  return letter === string[0];
+  //if (letter === string[0]){
+  //  return true; // letter === string[0] conditional
+  //}
+//  return false; // else return false
 }// end of isFirstLetter()
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
