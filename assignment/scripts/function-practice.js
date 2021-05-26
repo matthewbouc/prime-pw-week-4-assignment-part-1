@@ -46,10 +46,7 @@ console.log('Test - return 60 with inputs 10, 2, 3: ', multiplyThree(10,2,3));
 //    or greater than zero, and false otherwise
 console.log(`5. Function to return true if number is positive, else false.`);
 function isPositive( number ) {
-  if ( number > 0 ){
-    return true; //end if true
-  }
-  return false; // else false
+  return number > 0;
 }//end isPositive()
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
